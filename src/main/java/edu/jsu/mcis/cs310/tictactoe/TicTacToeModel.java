@@ -76,11 +76,11 @@ public class TicTacToeModel {
     public boolean makeMark(int row, int col) {
         if(isValidSquare(row, col) && !isSquareMarked(row, col)){
             if (xTurn){
-                board[row][col] = 'X';
+                board[row][col] = TicTacToeSquare.X;
                 xTurn = false;
             }
             else{
-                board[row][col] = 'O'; 
+                board[row][col] = TicTacToeSquare.O; 
                 xTurn = true;
             } 
             return true;
@@ -234,7 +234,6 @@ public class TicTacToeModel {
             return true;
         }
 
-
         return false; 
         
     }
@@ -309,9 +308,29 @@ public class TicTacToeModel {
     public String toString() {
         
         StringBuilder output = new StringBuilder();
-        
-        // INSERT YOUR CODE HERE
-        
+
+        output.append(" "); //blank space at top left corner of game board
+
+        //print column numbers on first row
+        for (int column = 0; column<dimension; column++){
+            output.append(column);
+        }
+
+        output.append("\n");
+
+        //print each row
+        for(int row=0; row<dimension; row++){
+            for (int column=0; column<dimension; column++){
+                if (column==0){
+                    output.append(row);
+                }
+                else{
+                    output.append(getSquare(row, column)); 
+                }
+            }
+            output.append("\n"); 
+        }
+
         return output.toString();
         
     }
