@@ -310,7 +310,7 @@ public class TicTacToeModel {
         
         StringBuilder output = new StringBuilder();
 
-        output.append(" "); //blank space at top left corner of game board
+        output.append(" ").append(" "); //blank spaces at top left corner of game board
 
         //print column numbers on first row
         for (int column = 0; column<dimension; column++){
@@ -321,7 +321,7 @@ public class TicTacToeModel {
 
         //print each row
         for(int row=0; row<dimension; row++){
-            output.append(row); 
+            output.append(row).append(" "); 
             for (int column=0; column<dimension; column++){
             
                 output.append(getSquare(row, column)); 
