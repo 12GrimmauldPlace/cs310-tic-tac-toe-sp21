@@ -52,9 +52,12 @@ public class TicTacToeModel {
 
         /* Initialize board (fill with TicTacToeSquare.EMPTY) */
         
-        // INSERT YOUR CODE HERE
-        
-        
+        for (int row=0; row<=dimension; row++){
+            for (int column=0; column<=dimension; column++){
+                board[row][column] = TicTacToeSquare.EMPTY;
+            }
+        }
+
     }
     /**
     * Use isValidSquare(int, int) to check if the specified square is in range,
