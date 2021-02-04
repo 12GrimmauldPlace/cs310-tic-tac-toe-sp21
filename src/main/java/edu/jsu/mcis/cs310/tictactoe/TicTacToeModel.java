@@ -81,7 +81,6 @@ public class TicTacToeModel {
             }
             else{
                 board[row][col] = TicTacToeSquare.O; 
-                xTurn = true;
             } 
             return true;
         }
@@ -132,7 +131,7 @@ public class TicTacToeModel {
     * @see         TicTacToeSquare
     */
     public TicTacToeSquare getSquare(int row, int col) {
-
+        
         return board[row][col]; 
             
     }
@@ -146,17 +145,18 @@ public class TicTacToeModel {
     * @see         TicTacToeState
     */
     public TicTacToeState getState() {
-        
+        TicTacToeState state = TicTacToeState.NONE;
+
         if(isMarkWin(TicTacToeSquare.X)){
-            return TicTacToeState.X;
+            return state.X;
         }
         else if(isMarkWin(TicTacToeSquare.O)){
-            return TicTacToeState.O;
+            return state.O;
         }
         else if(isTie()){
-            return TicTacToeState.TIE;
+            return state.TIE;
         }
-        return TicTacToeState.NONE; 
+        return state; 
         
     }
     
@@ -320,13 +320,10 @@ public class TicTacToeModel {
 
         //print each row
         for(int row=0; row<dimension; row++){
+            output.append(row); 
             for (int column=0; column<dimension; column++){
-                if (column==0){
-                    output.append(row);
-                }
-                else{
-                    output.append(getSquare(row, column)); 
-                }
+            
+                output.append(getSquare(row, column)); 
             }
             output.append("\n"); 
         }
