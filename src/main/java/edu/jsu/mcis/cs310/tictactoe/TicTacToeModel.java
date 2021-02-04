@@ -132,10 +132,8 @@ public class TicTacToeModel {
     * @see         TicTacToeSquare
     */
     public TicTacToeSquare getSquare(int row, int col) {
-        
-        // INSERT YOUR CODE HERE
-        
-        return null; // this is a stub; you should remove it later!
+
+        return board[row][col]; 
             
     }
     
