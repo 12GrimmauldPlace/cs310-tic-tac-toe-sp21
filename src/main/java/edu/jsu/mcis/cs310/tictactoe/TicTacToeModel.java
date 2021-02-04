@@ -169,10 +169,73 @@ public class TicTacToeModel {
     * @see          TicTacToeSquare
     */
     private boolean isMarkWin(TicTacToeSquare mark) {
-        
-        // INSERT YOUR CODE HERE
-        
-        return false; // this is a stub; you may need to remove it later!
+
+        int numMarks; 
+
+        //check each row
+        numMarks = 0; 
+        for(int row=0; row<dimension; row++){
+            for(int column=0; column<dimension; column++){
+                if(mark == getSquare(row, column)){
+                    numMarks++; 
+                }
+            }
+            if (numMarks == dimension){
+                return true;
+            }
+            else{
+                numMarks = 0; 
+            }
+        }
+
+        //check each column
+        numMarks = 0; 
+        for(int column=0; column<dimension; column++){
+            for(int row=0; row<dimension; row++){
+                if(mark == getSquare(row, column)){
+                    numMarks++; 
+                }
+            }
+            if(numMarks == dimension){
+                return true;
+            }
+            else{
+                numMarks = 0; 
+            }
+        }
+
+        //check each diagonal: top left to bottom right
+        numMarks = 0;
+        int row = 0;
+        int column = 0; 
+        while(row<dimension && column<dimension){
+            if(mark == getSquare(row, column)){
+                numMarks++; 
+            }
+            row++; 
+            column++; 
+        }
+        if(numMarks == dimension){
+            return true;
+        }
+
+        //check each diagonal: bottom left to top right
+        numMarks = 0;
+        row = dimension-1; 
+        column = 0; 
+        while(row>=0 && column<dimension){
+            if(mark == getSquare(row, column)){
+                numMarks++; 
+            }
+            row--; 
+            column++; 
+        }
+        if(numMarks == dimension){
+            return true;
+        }
+
+
+        return false; 
         
     }
     
