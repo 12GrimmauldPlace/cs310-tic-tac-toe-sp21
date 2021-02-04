@@ -81,6 +81,7 @@ public class TicTacToeModel {
             }
             else{
                 board[row][col] = TicTacToeSquare.O; 
+                xTurn = true;
             } 
             return true;
         }
