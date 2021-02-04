@@ -147,8 +147,15 @@ public class TicTacToeModel {
     */
     public TicTacToeState getState() {
         
-        // INSERT YOUR CODE HERE
-        
+        if(isMarkWin(TicTacToeSquare.X)){
+            
+        }
+        else if(isMarkWin(TicTacToeSquare.O)){
+
+        }
+        else if(isTie()){
+
+        }
         return null; // this is a stub; you should remove it later!
         
     }
@@ -177,9 +184,14 @@ public class TicTacToeModel {
     */	
     private boolean isTie() {
         
-        // INSERT YOUR CODE HERE
-        
-        return false; // this is a stub; you may need to remove it later!
+        for (int row=0; row<dimension; row++){
+            for (int column=0; column<dimension; column++){
+                if(!isSquareMarked(row, column)){
+                    return false; //if unmarked square is found
+                }
+            }
+        }
+        return true; //if all squares are marked
         
     }
 
