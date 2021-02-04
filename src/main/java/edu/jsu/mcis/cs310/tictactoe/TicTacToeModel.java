@@ -52,8 +52,8 @@ public class TicTacToeModel {
 
         /* Initialize board (fill with TicTacToeSquare.EMPTY) */
         
-        for (int row=0; row<=dimension; row++){
-            for (int column=0; column<=dimension; column++){
+        for (int row=0; row<dimension; row++){
+            for (int column=0; column<dimension; column++){
                 board[row][column] = TicTacToeSquare.EMPTY;
             }
         }
@@ -92,10 +92,10 @@ public class TicTacToeModel {
     */
     private boolean isValidSquare(int row, int col) {
         
-        // INSERT YOUR CODE HERE
-        
-        return false; // this is a stub; you may need to remove it later!
-        
+        if (row>=0 && row<dimension && col>=0 && col<dimension)
+            return true;
+        else
+            return false; 
     }
     
     /**
