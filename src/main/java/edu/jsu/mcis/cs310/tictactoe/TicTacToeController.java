@@ -47,12 +47,12 @@ public class TicTacToeController {
 
         while ( !( model.isGameover() ) )
         {
-            view.showBoard(model.toString()); 
-            TicTacToeMove nextMove = view.getNextMove(model.isXTurn()); 
+            view.showBoard(model.toString()); //prints board to screen
+            TicTacToeMove nextMove = view.getNextMove(model.isXTurn()); //stores row, column choice
             boolean isMarked = model.makeMark(nextMove.getRow(), nextMove.getCol()); 
             while(!isMarked){
                 view.showInputError(); 
-                view.getNextMove(model.isXTurn());
+                nextMove = view.getNextMove(model.isXTurn()); //stores new row, column choice
                 isMarked = model.makeMark(nextMove.getRow(), nextMove.getCol());
             }
         }

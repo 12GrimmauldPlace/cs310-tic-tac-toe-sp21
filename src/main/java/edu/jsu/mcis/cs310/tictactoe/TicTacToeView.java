@@ -49,9 +49,9 @@ public class TicTacToeView {
         int row = keyboard.nextInt(); 
         int col = keyboard.nextInt(); 
 
-        TicTacToeMove board = new TicTacToeMove(row, col); 
+        TicTacToeMove square = new TicTacToeMove(row, col); 
 
-        return board;
+        return square;
 
     }
     
