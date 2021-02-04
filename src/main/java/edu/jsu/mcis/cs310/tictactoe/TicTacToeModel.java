@@ -317,7 +317,7 @@ public class TicTacToeModel {
             output.append(column);
         }
 
-        output.append("\n");
+        output.append("\n\n");
 
         //print each row
         for(int row=0; row<dimension; row++){
@@ -326,7 +326,7 @@ public class TicTacToeModel {
             
                 output.append(getSquare(row, column)); 
             }
-            output.append("\n"); 
+            output.append("\n\n"); 
         }
 
         return output.toString();
