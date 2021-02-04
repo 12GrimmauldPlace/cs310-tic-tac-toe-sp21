@@ -74,11 +74,18 @@ public class TicTacToeModel {
     * @see         TicTacToeSquare
     */
     public boolean makeMark(int row, int col) {
-        
-        // INSERT YOUR CODE HERE
-        
-        return false; // this is a stub; you may need to remove it later!
-        
+        if(isValidSquare(row, col) && !isSquareMarked(row, col)){
+            if (xTurn){
+                board[row][col] = 'X';
+                xTurn = false;
+            }
+            else{
+                board[row][col] = 'O'; 
+                xTurn = true;
+            } 
+            return true;
+        }
+        return false;   
     }
     
     /**
